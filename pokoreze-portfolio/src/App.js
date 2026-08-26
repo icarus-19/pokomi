@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import SFW from "./pages/SFW";
-import NSFW from "./pages/nsfw";
-import Commissions from "./pages/commissions";
+import NSFW from "./pages/NSFW";
+import Commissions from "./pages/Commissions";
 import Contact from "./pages/Contact";
 import "./App.css";
 
