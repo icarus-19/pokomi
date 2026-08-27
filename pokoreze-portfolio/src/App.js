@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home.js";
-import SFW from "./pages/SFW.js";
-import NSFW from "./pages/NSFW.js";
-import Commissions from "./pages/Commissions.js";
-import Contact from "./pages/Contact.js";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./pages/Home.jsx";
+import SFW from "./pages/SFW.jsx";
+import NSFW from "./pages/NSFW.jsx";
+import Commissions from "./pages/Commissions.jsx";
+import Contact from "./pages/Contact.jsx";
 import "./App.css";
 
 function App() {
