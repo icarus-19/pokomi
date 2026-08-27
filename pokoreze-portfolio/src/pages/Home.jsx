@@ -28,7 +28,7 @@ function Home({ darkMode }) {
           </a>
         </div>
         <div className="about-image">
-          <img class="icon" src="/images/poko.jpeg" alt="Pokoreze" />
+          <img className="icon" src="/images/poko.jpeg" alt="Pokoreze" />
         </div>
       </section>
     </>
