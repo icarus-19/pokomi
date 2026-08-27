@@ -271,6 +271,10 @@
 .contact {
   padding: 100px 60px;
   text-align: center;
+  margin-right: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
 .contact h2 {
@@ -356,4 +360,12 @@
 
 .gallery-card img:hover {
   transform: scale(1.03);
+}
+
+.icon {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
 }

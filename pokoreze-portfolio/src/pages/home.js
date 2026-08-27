@@ -4,14 +4,14 @@ function Home({ darkMode }) {
   return (
     <>
       <section className="hero">
-        <p className="tag">Digital Artist</p>
+        <p className="tag">hi i'm pokoreze</p>
         <h2 className="hero-title">
-          {darkMode ? "The Other Side of the Canvas" : "Where Art Meets Soul"}
+          {darkMode ? "welcome to thedark side of the Canvas" : "welcome to the light side of the canvas"}
         </h2>
         <p className="hero-sub">
           {darkMode
-            ? "Mature, expressive, and unapologetically creative."
-            : "Clean, expressive digital art for every story worth telling."}
+            ? "Mature, expressive, creative tailored to your desires."
+            : "Clean, expressive digital art tailored to your tastes."}
         </p>
         <Link to="/commissions" className="cta-btn">Commission Me</Link>
       </section>
@@ -21,15 +21,16 @@ function Home({ darkMode }) {
           <h2>About Pokoreze</h2>
           <p>
             A digital artist creating expressive, story-driven work across both
-            safe and mature spaces. Every piece is crafted with intention,
-            emotion, and a distinct visual voice.
+            safe and mature spaces. every piece tis talor made to your needs, intrests as well as desires.<br />
+            <br />
+            based in india he is a self taught artist with a passion for creating art that tells a story. he is always looking for new ways to express himself and his art. <br />
           </p>
-          <a href="https://instagram.com/pokoreze" target="_blank" rel="noreferrer" className="ig-link">
+          <a href="https://www.instagram.com/realpokoreze" target="_blank" rel="noreferrer" className="ig-link">
             📷 Follow on Instagram
           </a>
         </div>
         <div className="about-image">
-          <div className="placeholder-img">Art Here</div>
+          <img class="icon" src="/images/poko.jpeg" alt="Pokoreze" />
         </div>
       </section>
     </>
