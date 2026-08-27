@@ -36,6 +36,7 @@
 .dark .navbar { background-color: rgba(13,13,13,0.9); }
 
 .logo {
+  text-decoration: none;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -70,6 +71,33 @@
 
 .light .mode-toggle { background-color: #1a1a1a; color: white; }
 .dark .mode-toggle { background-color: #ffffff; color: #0d0d0d; }
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.light .hamburger span { background-color: #1a1a1a; }
+.dark .hamburger span { background-color: #e0e0e0; }
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* HERO */
 .hero {
@@ -187,14 +215,30 @@
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  columns: 3;
+  gap: 15px;
+  padding: 15px;
+  max-width: 1100px;
+  margin: 30px auto 0;
 }
 
 .gallery-card {
+  break-inside: avoid;
+  margin-bottom: 15px;
   border-radius: 15px;
   overflow: hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card img:hover {
+  transform: scale(1.03);
 }
 
 .gallery-placeholder {
@@ -225,6 +269,7 @@
   gap: 25px;
   justify-content: center;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .commission-card {
@@ -271,10 +316,11 @@
 .contact {
   padding: 100px 60px;
   text-align: center;
-  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
 }
 
 .contact h2 {
@@ -284,7 +330,14 @@
 
 .contact p {
   opacity: 0.7;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* FOOTER */
@@ -296,8 +349,7 @@
   border-top: 1px solid rgba(128,128,128,0.15);
 }
 
-/* split's code starts here*/
-
+/* AGE GATE */
 .age-gate {
   min-height: 80vh;
   display: flex;
@@ -305,7 +357,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px;
+  padding: 40px 20px;
   gap: 20px;
 }
 
@@ -322,50 +374,152 @@
   display: flex;
   gap: 20px;
   margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cta-btn.secondary {
   opacity: 0.6;
 }
 
-.logo {
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-/* image styling here */
-.gallery-grid {
-  columns: 3;
-  gap: 15px;
-  padding: 15px;
-  max-width: 1100px;
-  margin: 30px auto 0;
-}
-
-.gallery-card {
-  break-inside: avoid;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-.gallery-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-card img:hover {
-  transform: scale(1.03);
-}
-
+/* ICON IMAGE */
 .icon {
   max-width: 50%;
   height: auto;
   display: block;
   margin-left: 0;
   margin-right: 0;
+}
+
+/* ================================
+   RESPONSIVE — TABLET (≤768px)
+   ================================ */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 16px 24px;
+    position: relative;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(128,128,128,0.15);
+    z-index: 99;
+  }
+
+  .light .nav-links { background-color: rgba(250,250,250,0.97); }
+  .dark .nav-links { background-color: rgba(13,13,13,0.97); }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 24px;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .mode-toggle {
+    margin: 12px 24px;
+    width: calc(100% - 48px);
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  /* About */
+  .about {
+    flex-direction: column;
+    padding: 60px 24px;
+    gap: 30px;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .icon {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  /* Gallery */
+  .gallery {
+    padding: 60px 24px;
+  }
+
+  .gallery-grid {
+    columns: 2;
+  }
+
+  /* Commissions */
+  .commissions {
+    padding: 60px 24px;
+  }
+
+  .commission-card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .commission-card.featured {
+    transform: scale(1);
+  }
+
+  /* Contact */
+  .contact {
+    padding: 60px 24px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 24px;
+  }
+}
+
+/* ================================
+   RESPONSIVE — MOBILE (≤480px)
+   ================================ */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+
+  .about-text h2,
+  .gallery h2,
+  .commissions h2,
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-grid {
+    columns: 1;
+  }
+
+  .age-gate h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
 }
