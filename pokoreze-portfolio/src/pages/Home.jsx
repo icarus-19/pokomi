@@ -22,9 +22,7 @@ function Home({ darkMode }) {
           <p>
             A digital artist creating expressive, story-driven work across both
             safe and mature spaces. every piece tis talor made to your needs, intrests as well as desires.<br />
-            <br />
-            based in india he is a self taught artist with a passion for creating art that tells a story. he is always looking for new ways to express himself and his art. <br />
-          </p>
+            </p>
           <a href="https://www.instagram.com/realpokoreze" target="_blank" rel="noreferrer" className="ig-link">
             📷 Follow on Instagram
           </a>
