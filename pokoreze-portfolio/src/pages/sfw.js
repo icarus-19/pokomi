@@ -1,4 +1,6 @@
 function SFW({ darkMode }) {
+  const images = [1,2,3,4,5,6,7,8,9,10,11,,13,14,15,16,17,18,19,20];
+
   return (
     <section className="gallery">
       <h2>{darkMode ? "NSFW Gallery" : "SFW Gallery"}</h2>
@@ -6,11 +8,9 @@ function SFW({ darkMode }) {
         {darkMode ? "18+ content — viewer discretion advised." : "A selection of recent work."}
       </p>
       <div className="gallery-grid">
-        {[1,2,3,4,5,6].map(i => (
+        {images.map(i => (
           <div key={i} className="gallery-card">
-            <div className="gallery-placeholder">
-              {darkMode ? `NSFW Art ${i}` : `Artwork ${i}`}
-            </div>
+            <img src={`/images/pic ${i}.jpeg`} alt={`artwork ${i}`} />
           </div>
         ))}
       </div>

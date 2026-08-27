@@ -330,3 +330,30 @@
   font-weight: 700;
   letter-spacing: 2px;
 }
+/* image styling here */
+.gallery-grid {
+  columns: 3;
+  gap: 15px;
+  padding: 15px;
+  max-width: 1100px;
+  margin: 30px auto 0;
+}
+
+.gallery-card {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card img:hover {
+  transform: scale(1.03);
+}
