@@ -1,5 +1,5 @@
 {
-    "buildcommand": "npm run build",
-    "outputdirectory": "build"
+    "buildcommand": "cd pokoreze-portfolio && npm run build",
+    "outputdirectory": "pokoreze-portfolio/build",
     "framework": "create-react-app"
 }
