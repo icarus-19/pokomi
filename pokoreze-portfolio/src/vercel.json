@@ -2,4 +2,10 @@
     "buildcommand": "cd pokoreze-portfolio && npm run build",
     "outputdirectory": "pokoreze-portfolio/build",
     "framework": "create-react-app"
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/pokoreze-portfolio/build/$1"
+        }
+    ]
 }
