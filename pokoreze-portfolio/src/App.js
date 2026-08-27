@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home.jsx";
 import SFW from "./pages/SFW.jsx";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/commissions" element={<Commissions darkMode={darkMode} />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Analytics />
       </div>
     </Router>
   );
