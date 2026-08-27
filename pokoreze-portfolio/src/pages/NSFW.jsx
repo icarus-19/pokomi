@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 function NSFW() {
   const [confirmed, setConfirmed] = useState(false);
-  const Images = [1,2,3,4,5,6,7,8,9,10,11,12,13,];
+  const [selected, setSelected] = useState(null);
+  const Images = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 
   if (!confirmed) {
     return (
@@ -25,13 +26,26 @@ function NSFW() {
     <section className="gallery">
       <h2>NSFW Gallery</h2>
       <p className="section-sub">18+ content — viewer discretion advised.</p>
+
       <div className="gallery-grid">
         {Images.map(i => (
-          <div key={i} className="gallery-card">
+          <div key={i} className="gallery-card" onClick={() => setSelected(i)}>
             <img src={`/images/nsfw/pics${i}.jpeg`} alt={`artwork ${i}`} />
           </div>
         ))}
       </div>
+
+      {/* LIGHTBOX */}
+      {selected && (
+        <div className="lightbox" onClick={() => setSelected(null)}>
+          <button className="lightbox-close" onClick={() => setSelected(null)}>✕</button>
+          <img
+            src={`/images/nsfw/pics${selected}.jpeg`}
+            alt={`artwork ${selected}`}
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }

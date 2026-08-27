@@ -10,6 +10,7 @@
   background-color: #fafafa;
   color: #1a1a1a;
   font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
 }
 
 /* DARK MODE */
@@ -17,6 +18,7 @@
   background-color: #0d0d0d;
   color: #e0e0e0;
   font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
 }
 
 /* NAV */
@@ -522,4 +524,45 @@
     padding: 12px 28px;
     font-size: 0.95rem;
   }
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  opacity: 0.8;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.gallery-card {
+  cursor: pointer;
 }
